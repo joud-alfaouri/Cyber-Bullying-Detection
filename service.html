@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>XShield</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              XShield
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item ">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"> About</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="service.html">Services</a>
+              </li>
+             
+            </ul>
+            <div class="quote_btn-container">
+
+                <a class="quote_btn"id="modal_trigger" href="#modal">
+                  <i class="fa fa-sign-in-alt">LOG IN</i>
+                </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+  <div id="modal" class="popupContainer" style="display:none;">
+    <div class="popupHeader">
+        <span class="header_title">Login</span>
+        <span class="modal_close"><i class="fa fa-times"></i></span>
+    </div>
+  
+    <section class="popupBody">
+        <!-- Social Login -->
+        <div class="social_login">
+            <!--<div class="">
+                <a href="#" class="social_box fb">
+                    <span class="icon"><i class="fab fa-facebook"></i></span>
+                    <span class="icon_title">Connect with Facebook</span>
+  
+                </a>
+  
+                <a href="#" class="social_box google">
+                    <span class="icon"><i class="fab fa-google-plus"></i></span>
+                    <span class="icon_title">Connect with Google</span>
+                </a>
+            </div>-->
+  
+            <div class="centeredText">
+                <span>Or use your Email address</span>
+            </div>
+  
+            <div class="action_btns">
+                <div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
+                <div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
+            </div>
+        </div>
+  
+        <!-- Username & Password Login form -->
+        <div class="user_login">
+          <form id="loginForm">
+                <div id="loginFeedback" class="feedback"></div>
+                <label>Email / Username</label>
+                <input type="text"  id="login_email"/>
+                <br />
+  
+                <label>Password</label>
+                <input type="password" id="login_password" />
+                <br />
+  
+                <div class="checkbox">
+                    <input id="remember"  id="send_updates"type="checkbox" />
+                    <label for="remember">Remember me on this computer</label>
+                </div>
+  
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                    <div class="one_half last"><a type="submit" onclick="loginUser()"  id="login_button" class="btn btn_red">Login</a></div>                 
+                </div>
+            </form>
+  
+            <a href="#" id="forgot_password_link" class="forgot_password">Forgot password?</a>
+
+        </div>
+  
+        <!-- Register Form -->
+        <div class="user_register">
+          <form id="registerForm"> <!-- Add an id to the form for easier JS targeting -->
+            <div id="registerFeedback" class="feedback"></div>
+              <label for="full_name">Full Name</label>
+              <input type="text" id="full_name" name="full_name" required />
+              <br />
+            
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required />
+              <br />
+            
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required />
+              <br />
+            
+              <div class="checkbox">
+                <label for="terms"><a href="#" id="terms_link">I agree to the Terms and Conditions</a></label>
+                <input id="terms" type="checkbox" name="terms" required />
+            </div>
+            
+              <div class="action_btns">
+                  <div class="one_half"><button type="button" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</button></div>
+                  <div class="one_half last"><a  type="submit"  onclick="registerUser()"
+                     id="register_button" class="btn btn_red">Register</a></div>                </div>
+          </form>
+      </div>
+      <!-- Reset Password Form -->
+    <div class="reset_password_form">
+      <form id="resetPasswordForm">
+          <div id="resetPasswordFeedback" class="feedback"></div>
+          <label for="reset_email">Email Address</label>
+          <input type="text" id="reset_email" name="reset_email" required />
+          <br />
+          <label for="new_password">New Password</label>
+          <input type="password" id="new_password" name="new_password" required />
+          <br />
+          <label for="confirm_password">Confirm Password</label>
+          <input type="password" id="confirm_password" name="confirm_password" required />
+          <br />
+          <div class="action_btns">
+            <div class="one_half"><button type="button" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</button></div>
+              <div class="one_half last"><a type="submit" onclick="resetPassword()" id="reset_password_button" class="btn btn_red" >Reset</a></div>
+          </div>
+      </form>
+  </div>
+</form>
+</div>
+<!-- Terms and Conditions Popup -->
+<!-- Terms and Conditions Popup -->
+<div id="terms_modal" class="popupContainer" style="display:none;">
+<div class="popupHeader">
+<span class="header_title">Terms and Conditions</span>
+<span class="modal_close"><i class="fa fa-times"></i></span>
+</div>
+
+<section class="popupBody">
+<div class="terms_content">
+  <h2>Terms and Conditions</h2>
+  <p>Welcome to XShield! These terms and conditions outline the rules and regulations for the use of our website.</p>
+
+  <h4>1. Acceptance of Terms</h4>
+  <p>By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use XShield if you do not accept all of the terms and conditions stated on this page.</p>
+
+  <h4>2. Use of the Website</h4>
+  <p>You must not:</p>
+  <ul>
+      <li>Republish material from XShield</li>
+      <li>Sell, rent, or sub-license material from XShield</li>
+      <li>Reproduce, duplicate, or copy material from XShield</li>
+      <li>Redistribute content from XShield, unless content is specifically made for redistribution</li>
+  </ul>
+
+  <h4>3. User Content</h4>
+  <p>In these terms and conditions, “your user content” means material (including without limitation text, images, audio material, video material, and audio-visual material) that you submit to this website. You grant to XShield a worldwide, irrevocable, non-exclusive, royalty-free license to use, reproduce, adapt, publish, translate, and distribute your user content in any existing or future media.</p>
+
+  <h4>4. Limitations of Liability</h4>
+  <p>In no event shall XShield, nor any of its officers, directors, and employees, be liable to you for anything arising out of or in any way connected with your use of this website, whether such liability is under contract, tort, or otherwise. XShield, including its officers, directors, and employees, shall not be liable for any indirect, consequential, or special liability arising out of or in any way related to your use of this website.</p>
+
+  <h4>5. Indemnification</h4>
+  <p>You hereby indemnify to the fullest extent XShield from and against any and all liabilities, costs, demands, causes of action, damages, and expenses (including reasonable attorney’s fees) arising out of or in any way related to your breach of any of the provisions of these terms.</p>
+
+  <h4>6. Severability</h4>
+  <p>If any provision of these terms is found to be invalid under any applicable law, such provisions shall be deleted without affecting the remaining provisions herein.</p>
+
+  <h4>7. Variation of Terms</h4>
+  <p>XShield is permitted to revise these terms at any time as it sees fit, and by using this website you are expected to review these terms on a regular basis.</p>
+
+  <h4>8. Assignment</h4>
+  <p>XShield is allowed to assign, transfer, and subcontract its rights and/or obligations under these terms without any notification. However, you are not allowed to assign, transfer, or subcontract any of your rights and/or obligations under these terms.</p>
+
+  <h4>9. Entire Agreement</h4>
+  <p>These terms constitute the entire agreement between XShield and you in relation to your use of this website and supersede all prior agreements and understandings.</p>
+
+  <h4>10. Governing Law & Jurisdiction</h4>
+  <p>These terms will be governed by and interpreted in accordance with the laws of [Your Country/State], and you submit to the non-exclusive jurisdiction of the state and federal courts located in [Your Country/State] for the resolution of any disputes.</p>
+</div>
+
+<div class="checkbox">
+  <input id="terms" type="checkbox" name="terms" required />
+  <label for="terms">I agree to the Terms and Conditions</label>
+</div>
+
+</section>
+</div>
+
+
+  <section class="service_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Our Services
+        </h2>
+        <p>
+          If you need us to help you detect Cyber-bullying using the latest artificial intellegence algorithms.And inform you of that.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/shield_1125846.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Start Detecting
+              </h5>
+              <p>
+                Analyze tweets
+              </p>
+              <a   href="detct.html">
+                <span>
+                  Read More
+                </span>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/memories_8604567.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Start Learning
+              </h5>
+              <p>
+                Learn about Cyberbullying 
+              </p>
+              <a href="learn.html">
+                <span>
+                  Read More
+                </span>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/feedback_1456240.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Email Us
+              </h5>
+              <p>
+                Send us Feedback
+              </p>
+              <a href="feedback.html">
+                <span>
+                  Read More
+                </span>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end service section -->
+
+
+  <div class="footer_container">
+    <!-- info section -->
+
+    <section class="info_section ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 ">
+            <div class="info_detail">
+              <h4>
+                XShield
+              </h4>
+              <p>
+                Necessary, making this the first website that uses AI algorithms with large dataset to detcet cyberbullying 
+            
+              </p>  </div>
+          </div>
+          <div class="col-md-6 col-lg-2 mx-auto">
+            <div class="info_link_box">
+              <h4>
+                Links
+              </h4>
+              <div class="info_links">
+                <a class="" href="index.html">
+                  Home
+                </a>
+                <a class="" href="about.html">
+                  About
+                </a>
+                <a class="" href="service.html">
+                  Services
+                </a>
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3 mb-0 ml-auto">
+            <div class="info_contact">
+              <h4>
+               Contact Us
+              </h4>
+              <div class="contact_link_box">
+                
+                
+                <a href="">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  <span>
+                    Call +01 1234567890
+                  </span>
+                </a>
+                
+              </div>
+            </div>
+            <div class="info_social">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end info section -->
+
+    <!-- footer section -->
+    <footer class="footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved 
+          
+        </p>
+      </div>
+    </footer>
+    <!-- footer section -->
+  </div>
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/login_register.js"></script>
+  <!-- End Google Map -->
+
+</body>
+
+</html>
