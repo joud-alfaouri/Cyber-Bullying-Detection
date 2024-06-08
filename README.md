@@ -1,6 +1,6 @@
 # XShield: Cyberbullying Detection Website
 
-![XShield Logo](link-to-your-logo)
+
 
 ## Overview
 
